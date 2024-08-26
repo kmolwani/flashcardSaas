@@ -12,6 +12,7 @@ export default function SignUpPage(){
                     }}>
                         FlashCard SaaS
                     </Typography>
+                    <Button color="inherit" href="/">Home</Button>
                     <Button color="inherit" href='/sign-in'>
                         Login    
                     </Button>
