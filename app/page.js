@@ -14,7 +14,7 @@ export default function Home() {
       const checkoutSession = await fetch('/api/checkout_session_pro', {
         method: 'POST',
         headers: {
-          origin: 'https://localhost:3002'
+          origin: 'https://flashcard-saas-ivory.vercel.app'
         }
       })
 
@@ -39,7 +39,7 @@ export default function Home() {
       const checkoutSession = await fetch('/api/checkout_session', {
         method: 'POST',
         headers: {
-          origin: 'https://localhost:3002'
+          origin: 'https://flashcard-saas-ivory.vercel.app'
         }
       })
 
