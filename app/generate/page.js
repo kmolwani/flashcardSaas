@@ -101,18 +101,18 @@ export default function Generate() {
         <title>FlashCard Generator</title>
         <meta name="description" content="Generate flashcard from text" />
       </Head>
-      <AppBar position="static">
+      <AppBar position="fixed" sx={{width: '100vw', pl: '0px', pr: '0px', zIndex: '9999', backgroundColor: 'rgba(0,0,0,0.85)', boxShadow: '10'}}>
         <Toolbar>
           <Typography variant="h6" style={{flexGrow: 1}}>
-            FlashCard SaaS
+            CardsAI
           </Typography>
           <SignedOut>
             <Button color="inherit" href="/">Home</Button>
           </SignedOut>
           <SignedIn>
-            <Button color="inherit" href="/">Home</Button>
-            <Button color="inherit" href="/generate">Generate</Button>
-            <Button color="inherit" href="/flashcards">Saved</Button>
+            <Button color="inherit" href="/" sx={{mr:2, backgroundColor: 'grey'}}>Home</Button>
+            <Button color="inherit" href="/generate" sx={{mr:2, backgroundColor: 'grey'}}>Generate</Button>
+            <Button color="inherit" href="/flashcards" sx={{mr:2, backgroundColor: 'grey'}}>Saved</Button>
             <Button>
               <UserButton/>
             </Button>
@@ -128,7 +128,8 @@ export default function Generate() {
           mb: 6,
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center'
+          alignItems: 'center',
+          pt: '10vh'
         }}
         >
           <Typography variant="h4">Generate FlashCards</Typography>
@@ -145,7 +146,7 @@ export default function Generate() {
                 mb: 2
               }}
             />
-            <Button variant="contained" color="primary" onClick={() => {
+            <Button sx={{backgroundColor: 'black'}} variant="contained" color="primary" onClick={() => {
               handleSubmit();
               setLoading(true);
             }} fullWidth> Submit </Button>
@@ -208,8 +209,8 @@ export default function Generate() {
                 </Grid>
               ))}
             </Grid>
-            <Box sx={{mt:4, display:'flex', justifyContent: 'center'}}>
-              <Button variant="contained" color="secondary" onClick={handleOpen}>
+            <Box sx={{mt:4, display:'flex', justifyContent: 'center', pb: '5vh'}}>
+              <Button variant="contained" color="secondary" sx={{backgroundColor: 'black'}} onClick={handleOpen}>
                 Save
               </Button>
             </Box>

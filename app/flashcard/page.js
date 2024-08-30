@@ -53,22 +53,22 @@ export default function Flashcard() {
                 <title>Saved Flashcards</title>
                 <meta name="description" content="Saved flashcards" />
             </Head>
-            <AppBar position="static">
+            <AppBar position="fixed" sx={{width: '100vw', pl: '0px', pr: '0px', zIndex: '9999', backgroundColor: 'rgba(0,0,0,0.85)', boxShadow: '10'}}>
                 <Toolbar>
                 <Typography variant="h6" style={{flexGrow: 1}}>
-                    FlashCard SaaS
+                    CardsAI
                 </Typography>
                 <SignedIn>
-                    <Button color="inherit" href="/">Home</Button>
-                    <Button color="inherit" href="/generate">Generate</Button>
-                    <Button color="inherit" href="/flashcards">Saved</Button>
+                <Button color="inherit" href="/" sx={{mr:2, backgroundColor: 'grey'}}>Home</Button>
+                <Button color="inherit" href="/generate" sx={{mr:2, backgroundColor: 'grey'}}>Generate</Button>
+                <Button color="inherit" href="/flashcards" sx={{mr:2, backgroundColor: 'grey'}}>Saved</Button>
                     <Button>
                     <UserButton/>
                     </Button>
                 </SignedIn>
                 </Toolbar>
             </AppBar>
-            <Grid container spacing={3} sx={{mt:4}}>
+            <Grid container spacing={3} sx={{mt:4, p: '5vh'}}>
                 {flashcards.map((flashcard, index) => (
                 <Grid item xs = {12} sm = {6} md = {4} key = {index}>
                     <Card>
@@ -107,7 +107,6 @@ export default function Flashcard() {
                                         <div>
                                             <Typography variant="h6" component="div">  
                                             {flashcard.front}
-                                            {console.log(flashcard.front)}
                                             </Typography>
                                         </div>
                                         <div>

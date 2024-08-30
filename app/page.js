@@ -64,22 +64,22 @@ export default function Home() {
   return (
     <Container maxWidth='100vw'>
       <Head>
-        <title>Flashcard SaaS</title>
+        <title>CardsAI</title>
         <meta name="description" content="Create flashcard from text" />
       </Head>
-      <AppBar position="static">
+      <AppBar position="fixed" sx={{width: '100vw', pl: '0px', pr: '0px', zIndex: '9999', backgroundColor: 'rgba(0,0,0,0.85)', boxShadow: '10'}}>
         <Toolbar>
           <Typography variant="h6" style={{flexGrow: 1}}>
-            FlashCard SaaS
+            CardsAI
           </Typography>
           <SignedOut>
-            <Button color="inherit" href='/sign-in'>Login</Button>
-            <Button color="inherit" href='/sign-up'>Sign Up</Button>
+            <Button color="inherit" href='/sign-in' sx={{mr:2, backgroundColor: 'grey'}}>Sign In</Button>
+            <Button color="inherit" href='/sign-up' sx={{ml:2, ml: 2, backgroundColor: 'grey'}}>Sign Up</Button>
           </SignedOut>
           <SignedIn>
-            <Button color="inherit" href="/">Home</Button>
-            <Button color="inherit" href="/generate">Generate</Button>
-            <Button color="inherit" href="/flashcards">Saved</Button>
+            <Button color="inherit" href="/" sx={{mr:2, backgroundColor: 'grey'}}>Home</Button>
+            <Button color="inherit" href="/generate" sx={{mr:2, backgroundColor: 'grey'}}>Generate</Button>
+            <Button color="inherit" href="/flashcards" sx={{mr:2, backgroundColor: 'grey'}}>Saved</Button>
             <Button>
               <UserButton/>
             </Button>
@@ -89,25 +89,29 @@ export default function Home() {
       <Box
         sx = {{
           textAlign: 'center',
-          my: 4
+          pt: '25vh',
+          pb: '15vh',
+          width: '100vw',
+          backgroundColor: 'rgba(245,245,247,1)',
+          color: 'rgba(72,72,75,0.85)'
         }}
       >
-        <Typography variant="h2" gutterBottom>Welcome to FlashCard SaaS</Typography>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h2" sx={{pb: '10vh'}}>Welcome to CardsAI</Typography>
+        <Typography variant="h5" gutterBottom sx={{color: 'rgba(0,0,0,1)'}}>
           {' '}
           The easiest way to make FlashCards from Text.
         </Typography>
         <SignedIn>
-          <Button variant="contained" color="primary" sx={{mt: 2}} href='/generate'>Get Started</Button>
+          <Button variant="contained" color="primary" sx={{mt: 2, backgroundColor: 'black'}} href='/generate'>Let's Generate</Button>
         </SignedIn>
         <SignedOut>
-          <Button variant="contained" color="primary" sx={{mt: 2}} href='/sign-in'>Login</Button>
-          <Button variant="contained" color="primary" sx={{mt: 2}} href='/sign-up'>Sign Up</Button>
+          <Button variant="contained" color="primary" sx={{mt: 2, mr:2, backgroundColor: 'black'}} href='/sign-in'>Sign In</Button>
+          <Button variant="contained" color="primary" sx={{mt: 2, ml:2, backgroundColor: 'black'}} href='/sign-up'>Sign Up</Button>
         </SignedOut>
       </Box>
-      <Box sx = {{my: 6}}>
-        <Typography variant="h4" gutterBottom>
-          Features
+      <Box sx = {{my: 1, pt: '15vh', pl: '12vw', pr: '12vw', pb: '15vh' , backgroundColor: 'black', color: '#fff'}}>
+        <Typography variant="h4" sx={{pb:10, fontWeight: 'bold'}}>
+          FEATURES
         </Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
@@ -133,14 +137,16 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
-      <Box sx={{my: 6, textAlign: 'center'}}>
-        <Typography variant="h4" gutterBottom>Pricing</Typography>
+      <Box sx={{my: 0, textAlign: 'center', pt: '15vh', pb: '15vh', pl: '12vw', pr: '12vw', width: '100vw', backgroundColor: 'rgba(245,245,247,1)', color: 'black'}}>
+        <Typography variant="h4" sx={{pb: '10vh', fontWeight: 'bold'}}>PRICING</Typography>
         <Grid container spacing={4} paddingLeft={'10vw'} paddingRight={'10vw'}>
           <Grid item xs={12} md={6}>
             <Box sx={{
               p: 3,
               border: '1px solid',
-              borderColor: 'grey.300',
+              borderColor: '#fff',
+              backgroundColor: 'rgba(72,72,75,0.85)',
+              color: '#fff',
               borderRadius: 2
             }}>
               <Typography variant="h5" gutterBottom>Basic</Typography>
@@ -149,7 +155,7 @@ export default function Home() {
                 {' '}
                 Access to basic flashcard features and limited storage.
               </Typography>
-              <Button variant="contained" color="primary" sx={{mt: 2}} onClick={() => {
+              <Button variant="contained" color="primary" sx={{mt: 2, backgroundColor: 'black'}} onClick={() => {
                   basicBool = true;
                   handleSubmit();
                 }}>
@@ -161,7 +167,9 @@ export default function Home() {
             <Box sx={{
               p: 3,
               border: '1px solid',
-              borderColor: 'grey.300',
+              borderColor: '#fff',
+              backgroundColor: 'rgba(72,72,75,0.85)',
+              color: '#fff',
               borderRadius: 2
             }}>
               <Typography variant="h5" gutterBottom>Pro</Typography>
@@ -170,7 +178,7 @@ export default function Home() {
                 {' '}
                 Unlimited flashcards and storage with priority support.
               </Typography>
-              <Button variant="contained" color="primary" sx={{mt: 2}} onClick={() => {
+              <Button variant="contained" color="primary" sx={{mt: 2, backgroundColor: 'black'}} onClick={() => {
                   proBool = true;
                   handleSubmit();
                 }}>
@@ -179,6 +187,20 @@ export default function Home() {
             </Box>
           </Grid>
         </Grid>
+      </Box>
+      <Box borderTop= '1px solid grey'
+        sx={{
+          width: '100vw',
+          backgroundColor: '#d7cece',
+          color: 'black',
+          textAlign: 'left',
+          pl: '10vw',
+          pt: '1vw',
+          pb: '1vw',
+          fontSize: '0.75em'
+        }}
+      >
+        <label>Copyright © 2024 CardsAI</label>
       </Box>
     </Container>
   );
