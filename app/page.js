@@ -91,7 +91,6 @@ export default function Home() {
           textAlign: 'center',
           pt: '25vh',
           pb: '15vh',
-          width: '100vw',
           backgroundColor: 'rgba(245,245,247,1)',
           color: 'rgba(72,72,75,0.85)'
         }}
@@ -137,7 +136,7 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
-      <Box sx={{my: 0, textAlign: 'center', pt: '15vh', pb: '15vh', pl: '12vw', pr: '12vw', width: '100vw', backgroundColor: 'rgba(245,245,247,1)', color: 'black'}}>
+      <Box sx={{my: 0, textAlign: 'center', pt: '15vh', pb: '15vh', pl: '12vw', pr: '12vw', backgroundColor: 'rgba(245,245,247,1)', color: 'black'}}>
         <Typography variant="h4" sx={{pb: '10vh', fontWeight: 'bold'}}>PRICING</Typography>
         <Grid container spacing={4} paddingLeft={'10vw'} paddingRight={'10vw'}>
           <Grid item xs={12} md={6}>
@@ -190,11 +189,10 @@ export default function Home() {
       </Box>
       <Box borderTop= '1px solid grey'
         sx={{
-          width: '100vw',
           backgroundColor: '#d7cece',
           color: 'black',
           textAlign: 'left',
-          pl: '10vw',
+          pl: '3vw',
           pt: '1vw',
           pb: '1vw',
           fontSize: '0.75em'
